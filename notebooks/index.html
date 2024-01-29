@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TensorFlow.js in Browser Console</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.9.0"></script>
+</head>
+<body>
+  <script>
+    async function main() {
+      // Define tf.Tensor object for initial value
+      const initialValue = tf.tensor([[1, 2], [3, 4]]);
+
+      // Define tf.Variable object (without `new`)
+      const x = tf.variable(initialValue);
+
+      // Print variables dtype and shape
+      console.log("dtype:", x.dtype);
+      console.log("shape:", x.shape);
+
+      // Print the tf.Variable object
+      x.print();
+
+      // Define new tf.Tensor object with the same shape
+      const newValue = tf.tensor([[5, 6], [10, 11]]);
+
+      // Assign new value to the variable (await it)
+      await x.assign(newValue);
+
+      // Print the updated tf.Variable object
+      x.print();
+    }
+
+    main(); // Call the async function
+  </script>
+</body>
+</html>
