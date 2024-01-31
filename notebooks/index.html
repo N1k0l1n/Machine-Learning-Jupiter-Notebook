@@ -1,38 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TensorFlow.js in Browser Console</title>
   <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.9.0"></script>
 </head>
+
 <body>
   <script>
+
     async function main() {
-      // Define tf.Tensor object for initial value
-      const initialValue = tf.tensor([[1, 2], [3, 4]]);
+      const y = tf.tensor2d([[42, 4, 7, 99], [-99, -3, 17, 22]]);
 
-      // Define tf.Variable object (without `new`)
-      const x = tf.variable(initialValue);
+      // Log the tensor's data for visual inspection
+      y.print();
 
-      // Print variables dtype and shape
-      console.log("dtype:", x.dtype);
-      console.log("shape:", x.shape);
+      // Get the flat array of tensor data
+      const data = await y.data();
 
-      // Print the tf.Variable object
-      x.print();
+      // Find the index of the target value (17 in this case)
+      const targetValue = 17;
+      const index = data.indexOf(targetValue);
 
-      // Define new tf.Tensor object with the same shape
-      const newValue = tf.tensor([[5, 6], [10, 11]]);
+      if (index !== -1) {
+        // Convert 1D index to row and column (1-based indexing)
+        const numColumns = y.shape[1];
+        const row = Math.floor(index / numColumns) + 1;
+        const col = index % numColumns + 1;
 
-      // Assign new value to the variable (await it)
-      await x.assign(newValue);
-
-      // Print the updated tf.Variable object
-      x.print();
+        console.log(`Position of ${targetValue}: Row ${row}, Column ${col}`);
+      } else {
+        console.log(`${targetValue} not found in the matrix.`);
+      }
     }
 
-    main(); // Call the async function
+    main();
   </script>
 </body>
+
 </html>
