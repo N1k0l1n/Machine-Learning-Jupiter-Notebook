@@ -11,32 +11,13 @@
 <body>
   <script>
 
-    async function main() {
-      const y = tf.tensor2d([[42, 4, 7, 99], [-99, -3, 17, 22]]);
+async function main() {
+  const tensor = tf.tensor2d([[1, 2, 3], [4, 5, 6]]);
+  const rowSums = tensor.sum(axis=0); // Sum across rows (axis=0)
+rowSums.print(); // Print the resulting tensor with row sums
+}
 
-      // Log the tensor's data for visual inspection
-      y.print();
-
-      // Get the flat array of tensor data
-      const data = await y.data();
-
-      // Find the index of the target value (17 in this case)
-      const targetValue = 17;
-      const index = data.indexOf(targetValue);
-
-      if (index !== -1) {
-        // Convert 1D index to row and column (1-based indexing)
-        const numColumns = y.shape[1];
-        const row = Math.floor(index / numColumns) + 1;
-        const col = index % numColumns + 1;
-
-        console.log(`Position of ${targetValue}: Row ${row}, Column ${col}`);
-      } else {
-        console.log(`${targetValue} not found in the matrix.`);
-      }
-    }
-
-    main();
+main();
   </script>
 </body>
 
