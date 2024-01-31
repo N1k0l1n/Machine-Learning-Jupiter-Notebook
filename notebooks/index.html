@@ -12,11 +12,10 @@
   <script>
 
 async function main() {
-const a = tf.tensor2d([[1, 2], [3, 4]]);
-const b = tf.tensor2d([[5, 7], [6, 8]]);
+  const w = tf.tensor1d([-1, 2, -2]);
+const x = tf.tensor1d([5, 10, 0]);
 
-a.dot(b).print();  // or tf.matMul(a, b)
-
+w.dot(x).print();
 }
 
 main();
