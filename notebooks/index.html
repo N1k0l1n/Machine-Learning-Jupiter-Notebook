@@ -12,9 +12,11 @@
   <script>
 
 async function main() {
-  const tensor = tf.tensor2d([[1, 2, 3], [4, 5, 6]]);
-  const rowSums = tensor.sum(axis=0); // Sum across rows (axis=0)
-rowSums.print(); // Print the resulting tensor with row sums
+const a = tf.tensor2d([[1, 2], [3, 4]]);
+const b = tf.tensor2d([[5, 7], [6, 8]]);
+
+a.dot(b).print();  // or tf.matMul(a, b)
+
 }
 
 main();
