@@ -14,7 +14,7 @@ TensorFlow.js provides a flexible and accessible platform for machine learning d
 
 ## Notebooks
 
-1. **01-introduction-to-tensorflowjs.ipynb**: Introduction to TensorFlow.js, setting up the environment, and basic operations.
+1. **01-linear-algebra.ipynb**: Introduction to TensorFlow.js, setting up the environment, and basic operations.
 2. **02-building-neural-networks.ipynb**: Creating and training neural networks using TensorFlow.js.
 3. **03-transfer-learning.ipynb**: Implementing transfer learning with TensorFlow.js for specialized tasks.
 4. **04-deployment-in-web-apps.ipynb**: Deploying TensorFlow.js models in web applications.
