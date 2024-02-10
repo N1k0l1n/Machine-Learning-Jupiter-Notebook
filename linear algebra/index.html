@@ -12,20 +12,16 @@
   <script>
 
 async function main() {
-// Solution for exercise 3: 
-const u = tf.tensor1d([2, 5, -3]);
+// Define a square matrix
+const matrix = tf.tensor2d([[2, -1], [-1, 2]]);
 
-const u2 = tf.tensor1d([0, -4, 6])
+// Perform eigendecomposition
+const { eigenvalues, eigenvectors } = tf.linalg.eig(matrix);
 
-//cant multiply on current state after concat
-// need to reshape to  3 column and 2 row in order to match the number of columns of B 
-const u3 = u.concat(u2).reshape([3, 2]);
+// Print eigenvalues and eigenvectors
+eigenvalues.print();
+eigenvectors.print();
 
-
-const B = tf.tensor2d([[2, 0, -1], [-2, 3, 1], [0, 4, - 1]]);
-
-//Remember, very important is the order of the required operations
-B.dot(u3).print();
 }
 
 main();
