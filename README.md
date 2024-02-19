@@ -1,12 +1,13 @@
-# TensorFlow.js Learning NoteBook
+# TensorFlow Learning NoteBook
 
 This repository contains Jupyter Notebooks for learning TensorFlow.js, a JavaScript library for training and deploying machine learning models in the browser and on Node.js.
 
 ## Overview
 
-TensorFlow.js provides a flexible and accessible platform for machine learning development in JavaScript. This project aims to provide a structured learning path using Jupyter Notebooks, covering various aspects of TensorFlow.js, including:
+TensorFlow provides a flexible and accessible platform for machine learning development in JavaScript or Python. This project aims to provide a structured learning path using Jupyter Notebooks, covering various aspects of TensorFlow, including:
 
-- Basics of TensorFlow.js
+- Linear Algebra
+- Basics of TensorFlow
 - Building and training neural networks
 - Transfer learning and fine-tuning pre-trained models
 - Deploying models in web applications
