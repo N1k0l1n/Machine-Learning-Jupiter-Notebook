@@ -30,7 +30,7 @@ To use these notebooks, follow these steps:
 1. Clone this repository to your local machine:
 
 ```bash
-git clone https://github.com/your-username/tensorflow-js-learning.git
+git clone https://github.com/N1k0l1n/Ml-Notebook.git
 ```
 
 ## Contribution
