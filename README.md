@@ -12,6 +12,7 @@ TensorFlow provides a flexible and accessible platform for machine learning deve
 - Transfer learning and fine-tuning pre-trained models
 - Deploying models in web applications
 - Integration with other JavaScript libraries and frameworks
+- TensorFlow.JS
 
 ## Notebooks
 
